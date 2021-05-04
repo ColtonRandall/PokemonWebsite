@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css">
+    <script type="text/javascript" src="pokemon.js"></script>
+</head>
+
+<body>
+
+    <!-- TODO: Your HTML here-->
+
+    <!-- pokemon logo -->
+    <div class="pokemonLogo">
+        <a href="pokemonLogo">
+            <img src="https://trex-sandwich.com/pokesignment/img/logo.svg">
+        </a>
+    </div>
+
+
+
+    <!-- Navigation bar -->
+    <div id="nav">
+
+        <a href="https://www.pokemon.com" id="navHome">Home</a>
+
+        <!-- Align items to right of nav bar -->
+
+        <a href="#randomPokemon" id="randPoke">Load Random Pokemon</a>
+        <a href="#showList" id="pokeList">Show Pokemon List</a>
+        <a href="#pokemonOfDay" id="pokeOfDay">Show Pokemon of the Day</a>
+
+    </div>
+
+
+    <!-- center columns -->
+    <div class="redColumns">
+
+
+        <!-- --------------------- LEFT COLUMN  -->
+        <div id="leftcol">
+            <p id="menuTitle">Menu</p>
+
+            <!-- Load random pokemon button -->
+            <button id="loadRandomPokemon">Load random pokemon</button>
+
+            <!-- show list of pokemon button  -->
+            <button id="showList">Show list of pokemon</button>
+        </div>
+
+
+        <!-- --------------------- MIDDLE COLUMN  -->
+
+        <div id="midcol">
+            <p id="pokeDetailsTitle">Pokemon details</p>
+
+            <div class="pokemonPanels">
+                <!-- 
+                    image panels go here
+                -->
+            </div>
+
+
+
+        </div>
+
+
+        <!-- --------------------- Right COLUMN  -->
+        <div id="rightcol">
+            <p id="podTitle">Pokemon of the day</p>
+
+            <p id="podImage">pokemonImage</p>
+
+            <p id="podName">Pokemon name</p>
+
+            <p id="podDetails">Pokemon details</p>
+
+            <!-- pokemon details button  -->
+            <button id="showDetails">Show Details</button>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

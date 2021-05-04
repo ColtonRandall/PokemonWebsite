@@ -1,0 +1,365 @@
+
+:root {
+    --nav-colour: #3cb371;
+    --column-colour: #ff7518;
+    --button-colour: rgb(121, 58, 204);
+    --panel-colour: #00CED1;
+    --heading-colour: dodgerblue;
+    --border-colour: black;
+  }
+
+/* font generator */
+@font-face {
+    font-family: 'pokemonFont';
+    src: url('../fonts/GirlOnAnAlleyChmc-W7rV.ttf');
+}
+
+ /* fill the whole page  */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+* {
+    font-family: "pokemonFont", sans-serif;
+}
+
+/* ------------------ header -------------- */
+/* pokemon logo */
+.pokemonLogo{
+    padding: auto;
+    text-align: center;
+    background-color: var(--panel-colour);
+}
+
+/*  Adding Pokemon colours animation to header */
+@keyframes pokemonHeadingColour {
+    0% {background-color:var(--heading-colour);}
+    25% {background-color: gold;}
+    50% {background-color: orange;}
+    75% {background-color: rgb(199, 53, 53);}
+    100% {background-color: var(--heading-colour);}
+}
+
+.pokemonLogo {
+    animation: pokemonHeadingColour 4s infinite;
+}
+
+
+/* ------------------ Nav bar -------------- */
+#nav {
+    background-color: var(--nav-colour);
+    display: grid;
+    grid-template-columns: 4fr 0.5fr 0.5fr 0.5fr;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 3%; 
+  }
+
+  /* apply to all elements */
+#nav * {
+    color: #FFFFFF;
+    text-decoration:none;
+}
+
+#navHome {
+    width: fit-content;
+    font-size: 20pt;
+    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#navHome:hover, #pokeOfDay:hover, #pokeList:hover, #randPoke:hover {
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+#pokeOfDay, #pokeList, #randPoke {
+    text-decoration: none;
+    width: 80%;
+    text-align: center;
+    padding: 2px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 12pt;
+    float: right;
+}
+
+/* ------------------ red columns -------------- */
+
+ /* whole container div */
+.redColumns {
+    display: grid;
+    grid-template-columns:  0.5fr 2fr 0.5fr;
+    margin: auto;
+    width: 85%;
+}
+
+/* applies each column inidivually */
+.redColumns * {
+    text-align: center;
+    margin: 5px;
+    background-color:var(--column-colour);
+    border-radius: 3px;
+    padding: 10px;  
+}
+
+#leftcol, #midcol, #rightcol{
+    box-shadow: 4px 4px 5px slateblue;
+}
+
+
+/* ------------------  Menu (left column) -------------- */
+
+#menuTitle {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+/* --- menu buttons ---  */
+#leftcol button {
+    width: 100%;
+    font-size: 15pt;
+    background-color: var(--button-colour);
+    box-shadow: 1.5px 1.5px 5px black;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    padding: 5px;
+}
+
+
+
+/* ------------------ Pokemon details (Middle column) -------------- */
+
+#pokeDetailsTitle {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+
+ /* Center the images and space them evenly as shown in the example */
+.pokemonPanels{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content:space-evenly;
+}
+
+/* giving each panel a shadow */
+.panelImage {
+    box-shadow: 2px 2px 2px var(--border-colour);
+    border: 2px solid black;
+}
+
+
+.panelImage, .panelImage * {
+    background-color: var(--panel-colour);
+    font-size: 15pt;
+}
+
+.panelImage > img {
+    width: 180px;
+}
+
+.panelImage:hover {
+    border: 4px outset var(--button-colour);
+    box-shadow: 5px 5px 7px var(--button-colour);
+    transition: 0.5s;
+}
+
+.panelImage * :hover {
+    background: lightblue;
+}
+
+
+#pokemonDetails > img {
+    background-color: #46ACC2;
+
+}
+
+#pokemonDetailsColumn > p {
+    font-size: smaller;
+    font-weight: 800;
+}
+
+/*  ------- CSS for when a pokemon panel has been clicked ----- */
+
+.clickedPokemonDetails {
+    display: flex;
+}
+
+#weakAgainst, #pokemonDetailsColumn, #strongAgainst {
+    margin: 0;
+    padding: 0;
+}
+
+
+.weak, .weak *, .strong, .strong * {
+    background-color: var(--panel-colour);
+    font-size: 20pt;
+}
+
+ /* Change font size of clicked panels */
+.clickedPokemonDetails *{
+    font-size: 20pt;
+}
+
+
+
+#weakImg, #strongImg {
+    width:100px;
+    margin: 0;
+}
+
+
+#pokemonDetailsColumn > img {
+    width: 400px;
+    margin: auto;
+}
+
+#pokemonDetailsColumn > p {
+    font-size: 13pt;
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* ------------------  Skills (Bottom of middle column) -------------- */
+
+#skills {
+    margin: auto;
+    padding: 0%; 
+    display: flex;
+    justify-content:center;
+    font-size: smaller;
+    flex-grow: 1;
+    text-align: center;
+    border: solid var(--border-colour) 1px;
+    background-color: var(--button-colour);
+}
+
+#classList, #sigMoves {
+    width: 100%;
+    display: grid;
+    row-gap: 1em;
+    border: solid var(--border-colour) 1px;
+
+}
+
+#classList *, #sigMoves *{
+    width: max-content;
+    margin: auto;
+    padding: 5px;
+}
+
+#classList > p {
+    border: solid var(--border-colour) 1px;
+    font-weight: bolder;
+}
+
+
+
+/* ------------------  right column (Pokemon of the Day) -------------- */
+
+#rightcol * {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+ }
+
+ #podImage {
+     width: 75%;
+ }
+
+ #rightcol {
+    width: 100%;
+ }
+
+#podTitle, #podName {
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: center;
+}
+
+#podDetails {
+    font-size: 12pt;
+    text-align: justify;
+    font-weight: 200;
+}
+
+/* show details button  */
+#rightcol button{
+    font-size: 15pt;
+    background-color: rgb(121, 58, 204);
+    box-shadow: 1.5px 1.5px 5px black;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
+}
+
+
+/* ------------------ TABLET -------------- */
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+    .redColumns {
+        width: 100%;
+    }
+
+    .clickedPokemonDetails{
+        flex-direction: column;
+    }
+
+    .panelImage > img {
+        width: 100px;
+    }
+    
+}   
+
+
+/* ------------------ MOBILE -------------- */
+@media screen and (max-width: 900px) {
+
+
+    .redColumns {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+
+    /* Re-order the columns on a mobile screen */
+    .redColumns div:nth-of-type(3) {
+        order: 1;
+      }
+      .redColumns div:nth-of-type(2) {
+        order: 2;
+      }
+    .redColumns div:nth-of-type(1) {
+        order: 3;
+      }
+
+
+      /*  Re-order clicked panels into a more readable state */
+      .clickedPokemonDetails{
+          flex-direction: column;
+      }
+
+    .panelImage > img {
+        width: 100px;
+    }
+
+
+    #pokeOfDay, #pokeList, #randPoke{
+        width: 100%;
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+
+    
+}  
